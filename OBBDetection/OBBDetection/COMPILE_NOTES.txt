@@ -1,0 +1,32 @@
+Dependancies and notes:
+
+1. DIRECT X for Visual Studio 2008
+ - This compiled sucessfully with DirectX SDK: March 2009
+ - I also need to follow these instructions:
+   "When you install the DirectX SDK, it should automatically set the paths for include directories and lib files in Visual Studio. If it didn't, you'll have to do that yourself. Open up VS and go to Tools->Options->Projects and Solutions->VC++ Directories. In the drop-down under "Show Directories For:" change to "Include files". Then add a new folder, and find the "include" folder in your SDK install directory. Then switch to "Library files", and add the "lib" folder in either the x86 or x64 directories (x86 for 32-bit, x64 for 64-bit)."
+ - Good information here about setting up debug runtimes in directX SDK: http://thetavern.servebeer.com/?p=articles&a=D3DTutorial1
+ 
+1. DIRECT X for Visual Studio 2010
+ - This compiled sucessfully with DirectX SDK: June 2010
+ - I just uninstalled March 2009 SDK and reinstalled June 2010 (after Visual Studios was installed), then links must be put in the Project->Properties->Configuration Properties->VC++ Directories
+ - In the 'Include Directories' section, select your Program Files\Microsoft DirectX SDK\Include directory. In the 'Library Directories' section, select your Program Files\Microsoft DirectX SDK\lib\x86
+
+2. CGAL V3.6.1 (now compiled for Visual Studio 2010, binaries no longer avaliable for VS2008
+ - EVERYTHING SHOULD COMPILE AUTOMATICALLY.
+     --> I have copied pre-comiled .obj and dll and header files to paths in this directory.  Then I also added required dependancies and paths to Project Properties.
+ - If it doesn't work follow the instructons at "OBBDetection_references_&_installs\Installs\cgal installation (JONNO) V3.txt"
+ - (requires you to install boost, cmake and cgal --> Will take 4 hours and is very involved)
+ - Note: CGAL Libraries have been stripped of all but the functions I need.
+ - In VS10, after compiling you get a compile error "ambiguous overloading...";  bring up the file "ch_akl_toussaint_impl.h" and on lines 105 and 107, change bind(....) to boost::bind(...).
+ 
+3. Misc notes:
+ - This project uses unicode character set...  So you'll need a lot of L"" (LPCWSTR)
+ - How to debug memory leaks: http://voxelizator3d.wordpress.com/2007/04/29/how-to-hunt-memory-leaks-using-visual-studio/
+ - How to debug heap corruption: Install this http://www.microsoft.com/whdc/devtools/debugging/installx86.mspx#a then:
+		> Then open up Start->Programs->Debugging Tools for Windows (x86)->Global Flags
+		> Go to the "Image File" tab.  Then type "OBBDetection.exe" and press tab.
+		> Select the box "Enable page heap".  Which monitors dynamic heap memory operations, including allocate and free operations, and causes a debugger break when the verifier detects a heap error.
+		> Alternatively run from cmd: "gflags.exe –p /enable OBBDetection.exe /full", then "gflags.exe -p /disable OBBDetection.exe" to disable.
+		
+4. Algorithm / Limitations:
+ - rbobject scale factor is just one scalar...  Cannot scale unevenly in each direction <s_x,s_y,s_z>.  

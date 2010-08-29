@@ -1,0 +1,48 @@
+List of stuff to be done (highest to lowest priority):
+
+HIGHEST PRIORITY
+  
+- Change skybox and models so they don't look like they're from the textbook.
+
+
+HIGHEST PRIORITY
+
+- Write my own triangle-triangle collision test.  Just using Tomas Moller's
+  implimentation for now.
+
+- OBB collision test with zero thickness in one or 2 dimensions can be 
+  implimented more efficiently -> at the moment I just send to generic OBB-
+  OBB test algorithm = slow.  Impliment OBB Vs. plane, OBB Vs. line segment,
+  plane Vs. plane, etc.
+
+- Impliment impulse based physics modeling when collision detection is 
+  implimented as in tutorial. 
+  
+- Limit velocity -> OBBs have a chace of going through other objects.
+  
+- Coarse collision is done with AABBs, since sweep-and-prune takes O(n) time 
+  (where n is the number of models).  But then I do a crappy lookup in a boolian
+  array of O(n^2) time.  Consider another implimentation. Make sure AABB 
+  realignment isn't dumb.  See pg 86 of collision detection book
+  for an update method.
+ 
+- When convex hull is a line segment --> Align OBB along this line.  Right 
+  now I drop out and use the origional model as CH.  It works, but it is dumb.  
+  
+- Scaling of box dimensions could be done with a vector for scaling unevenly
+  accross world axes (ie <s1, s2, s3> instead of <s, s, s>).    
+    
+- Include OBB collision test optimization for zero length boxes (as in paper).
+  
+- Add a progress bar when re-creating OBBTREE. --> UPDATE: Window doesn't 
+  refresh.  Progress is sent to "Output" window for now.  Debug Later.  
+
+- Some functions are missing in gmp-vc90-mt-sgd.lib (so I cheat and link in 
+  gmp-vc90-mt-gd.dll).  That means OBBDetection.exe isn't self contained (needs
+  the .dll file in the same directory) --> Recompile gmp (static, 
+  multi-threaded debug) to fix this issue.
+  
+- I use a manually managed vector class (not vector<> C++ template) for physics
+  obb collisions and obbtree.  Make my owen vector template class for these.
+
+LOWEST PRIORITY

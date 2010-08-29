@@ -1,0 +1,93 @@
+clear all; clc; clear global; close all;
+format long;
+
+EPSILON = 0.000001;
+
+%% Inputs
+a_orientMat = [[0,-1,0];[-1,0,0];[0,0,1]];
+a_rbo_R = [[-0.99999976,0,0];[0,1,0];[0,0,-0.99999976]];
+b_orientMat = [[0,0,1];[-1,0,0];[0,1,0]];
+b_rbo_R = [[-0.39722300,0.60277611,0.69200748];[-0.60277671,0.39722389,-0.69200671];[-0.69200701,-0.69200718,0.20555311]];
+a_boxCenterObjectCoord = [-0.99999994039535522;0;0];
+b_boxCenterObjectCoord = [0;0;0.99999994039535522];
+a_rbo_x = [0;0;0];
+a_rbo_scale = 1.0;
+b_rbo_x = [0;2.3110094;0];
+b_rbo_scale = 1.0;
+a_boxDimension = [0.99999994039535522;1.0000000000000001e-005;0.99999994039535522];
+b_boxDimension = [0.99999994039535522;1.0000000000000001e-005;0.99999994039535522];
+
+%% Code here on: obbox.cpp: TestOBBCollision()
+R_a = a_orientMat * a_rbo_R;
+R_b = b_orientMat * b_rbo_R;
+R = R_a' * R_b; % A_Transpose & B
+
+t_boxCenter_a = a_boxCenterObjectCoord * a_rbo_scale;
+t_boxCenter_b = b_boxCenterObjectCoord * b_rbo_scale;
+t_boxCenter_a = a_rbo_R * t_boxCenter_a;
+t_boxCenter_b = b_rbo_R * t_boxCenter_b;
+
+t_world_a = a_rbo_x + t_boxCenter_a;
+t_world_b = b_rbo_x + t_boxCenter_b;
+t_world = t_world_b - t_world_a;
+
+t = R_a' * t_world;
+
+a_OBBDim = a_boxDimension .* a_rbo_scale;
+b_OBBDim = b_boxDimension .* b_rbo_scale;
+
+AbsR = abs(R) + EPSILON;
+
+contact = 1; 
+
+for i = 1:3
+    ra = a_OBBDim(i);
+    rb = (b_OBBDim(1) * AbsR(i,1)) +  (b_OBBDim(2) * AbsR(i,2)) +  (b_OBBDim(3) * AbsR(i,3));
+    if(abs(t(i)) > ra + rb); disp('NO CONTACT'); contact = 0; end
+end
+
+for i = 1:3
+    ra = (a_OBBDim(1) * AbsR(1,i)) + (a_OBBDim(2) * AbsR(2,i)) + (a_OBBDim(3) * AbsR(3,i));
+    rb = b_OBBDim(i);
+    if(abs(t(i)) > ra + rb); disp('NO CONTACT'); contact = 0; end
+end
+
+ra = a_OBBDim(2) * AbsR(3,1) + a_OBBDim(3) * AbsR(2,1);
+rb = b_OBBDim(2) * AbsR(1,3) + b_OBBDim(3) * AbsR(1,2);
+if (abs(t(3) * R(2,1) - t(2) * R(3,1)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(2) * AbsR(3,1) + a_OBBDim(3) * AbsR(2,2);
+rb = b_OBBDim(1) * AbsR(1,3) + b_OBBDim(3) * AbsR(1,1);
+if (abs(t(3) * R(2,2) - t(2) * R(3,2)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(2) * AbsR(3,3) + a_OBBDim(3) * AbsR(2,3);
+rb = b_OBBDim(1) * AbsR(1,2) + b_OBBDim(2) * AbsR(1,1);
+if (abs(t(3) * R(2,3) - t(2) * R(3,3)) > ra + rb); contact = 0;  disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(3,1) + a_OBBDim(3) * AbsR(1,1);
+rb = b_OBBDim(2) * AbsR(2,3) + b_OBBDim(3) * AbsR(2,2);
+if (abs(t(1) * R(3,1) - t(3) * R(1,1)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(3,2) + a_OBBDim(3) * AbsR(1,2);
+rb = b_OBBDim(1) * AbsR(2,3) + b_OBBDim(3) * AbsR(2,1);
+if (abs(t(1) * R(3,2) - t(3) * R(1,2)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(3,3) + a_OBBDim(3) * AbsR(1,3);
+rb = b_OBBDim(1) * AbsR(2,2) + b_OBBDim(2) * AbsR(2,1);
+if (abs(t(1) * R(3,3) - t(3) * R(1,3)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(2,1) + a_OBBDim(2) * AbsR(1,1);
+rb = b_OBBDim(2) * AbsR(3,3) + b_OBBDim(3) * AbsR(3,2);
+if (abs(t(2) * R(1,1) - t(1) * R(2,1)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(2,2) + a_OBBDim(2) * AbsR(1,2);
+rb = b_OBBDim(1) * AbsR(3,3) + b_OBBDim(3) * AbsR(3,1);
+if (abs(t(2) * R(1,2) - t(1) * R(2,2)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+ra = a_OBBDim(1) * AbsR(2,3) + a_OBBDim(2) * AbsR(1,3);
+rb = b_OBBDim(1) * AbsR(3,2) + b_OBBDim(2) * AbsR(3,1);
+if (abs(t(2) * R(1,3) - t(1) * R(2,3)) > ra + rb); contact = 0; disp('NO CONTACT'); end
+
+if(contact); disp('CONTACT'); end
+
+
