@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{6154904c-d6c8-4fe9-b153-cbd92a433855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{317f9487-efa8-4c36-a849-418fb16f9052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConvexHull_Libs">
+      <UniqueIdentifier>{e5fa1292-5b2c-4b33-a620-439a082023d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConvexHull_Libs\qhull">
+      <UniqueIdentifier>{a4265d39-e9dc-4540-b7c8-598862d8613a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConvexHull_Libs\CGAL">
+      <UniqueIdentifier>{42b4ccab-b7e9-450d-a9f3-70e7b70c2168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConvexHull_Libs\StanHull">
+      <UniqueIdentifier>{b11a1ade-3738-4d63-ac91-367a7a94ee01}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug_object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableTex2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eig3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hashset_int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obbox_renderitems.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="obbtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="physics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rbobjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sky.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tritri_isectline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="winproc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qhull_interface.cpp">
+      <Filter>ConvexHull_Libs\qhull</Filter>
+    </ClCompile>
+    <ClCompile Include="CGAL.cpp">
+      <Filter>ConvexHull_Libs\CGAL</Filter>
+    </ClCompile>
+    <ClCompile Include="hull.cpp">
+      <Filter>ConvexHull_Libs\StanHull</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dformats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug_object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableTex2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eig3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hashset_int.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="obbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="obbox_renderitems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="obbtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rbobjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sky.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tritri_isectline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings.cfg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="models\airplane 2.x">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\BasicColumnScene.x">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\bigship1.x">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\bihull.bmp">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\bricks_color.bmp">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\car.x">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\chasis.jpg">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\chasis_a.jpg">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\floor_color.bmp">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\grassenvmap1024.dds">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\impreza.3ds">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\impreza.jpg">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\impreza.X">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\ruedas.jpg">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\turtle.X">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\ventanas.jpg">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\whitetex.dds">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="models\wings.bmp">
+      <Filter>Models</Filter>
+    </None>
+    <None Include="Shaders\LightShadow_2_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\LightShadow_2_0_noShadows.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\LightShadow_3_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\LightShadow_3_0_noShadows.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\sky_2_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\sky_3_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\wireFrame_2_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\wireFrame_3_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\wireFrameCol_2_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\wireFrameCol_3_0.fx">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="COMPILE_NOTES.txt" />
+    <None Include="TO_BE_DONE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="qhull\qhull_interface.h">
+      <Filter>ConvexHull_Libs\qhull</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="CGAL.h">
+      <Filter>ConvexHull_Libs\CGAL</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="hull.h">
+      <Filter>ConvexHull_Libs\StanHull</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>
