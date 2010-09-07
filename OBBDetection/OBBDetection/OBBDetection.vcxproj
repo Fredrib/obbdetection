@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{665AE0DF-F235-4FB4-BEAB-F9319994D094}</ProjectGuid>
+    <RootNamespace>BlocksMania</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\cgal_lib_include\auxiliary\taucs\include;..\cgal_lib_include\include;..\cgal_lib_include\auxiliary\gmp\include;..\boost_lib_include\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;DCGAL_CH_NO_POSTCONDITIONS;_DCGAL_CH_NO_POSTCONDITIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/dxgraphics02.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>mpfr-vc90-mt-gd.lib;gmp-vc90-mt-gd.lib;odbc32.lib;odbccp32.lib;d3d9.lib;d3dx9.lib;comctl32.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\cgal_lib_include\auxiliary\taucs\lib;..\cgal_lib_include\auxiliary\gmp\lib;..\cgal_lib_include\lib;..\boost_lib_include\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="collision.cpp" />
+    <ClCompile Include="debug_object.cpp" />
+    <ClCompile Include="DrawableTex2D.cpp" />
+    <ClCompile Include="eig3.cpp" />
+    <ClCompile Include="hashset_int.cpp" />
+    <ClCompile Include="hud.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="light.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="obbox.cpp" />
+    <ClCompile Include="obbox_renderitems.cpp" />
+    <ClCompile Include="obbtree.cpp" />
+    <ClCompile Include="physics.cpp" />
+    <ClCompile Include="rbobjects.cpp" />
+    <ClCompile Include="renderer.cpp" />
+    <ClCompile Include="sky.cpp" />
+    <ClCompile Include="tritri_isectline.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="vertex.cpp" />
+    <ClCompile Include="winproc.cpp" />
+    <ClCompile Include="qhull_interface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="CGAL.cpp" />
+    <ClCompile Include="hull.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="collision.h" />
+    <ClInclude Include="d3dformats.h" />
+    <ClInclude Include="debug_object.h" />
+    <ClInclude Include="DrawableTex2D.h" />
+    <ClInclude Include="eig3.h" />
+    <ClInclude Include="hashset_int.h" />
+    <ClInclude Include="hud.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="light.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="obbox.h" />
+    <ClInclude Include="obbox_renderitems.h" />
+    <ClInclude Include="obbtree.h" />
+    <ClInclude Include="physics.h" />
+    <ClInclude Include="rbobjects.h" />
+    <ClInclude Include="renderer.h" />
+    <ClInclude Include="sky.h" />
+    <ClInclude Include="tritri_isectline.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="vertex.h" />
+    <CustomBuildStep Include="qhull\qhull_interface.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="CGAL.h" />
+    <CustomBuildStep Include="hull.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="main.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings.cfg" />
+    <None Include="models\airplane 2.x" />
+    <None Include="models\BasicColumnScene.x" />
+    <None Include="models\bigship1.x" />
+    <None Include="models\bihull.bmp" />
+    <None Include="models\bricks_color.bmp" />
+    <None Include="models\car.x" />
+    <None Include="models\chasis.jpg" />
+    <None Include="models\chasis_a.jpg" />
+    <None Include="models\floor_color.bmp" />
+    <None Include="models\grassenvmap1024.dds" />
+    <None Include="models\impreza.3ds" />
+    <None Include="models\impreza.jpg" />
+    <None Include="models\impreza.X" />
+    <None Include="models\ruedas.jpg" />
+    <None Include="models\turtle.X" />
+    <None Include="models\ventanas.jpg" />
+    <None Include="models\whitetex.dds" />
+    <None Include="models\wings.bmp" />
+    <None Include="Shaders\LightShadow_2_0.fx" />
+    <None Include="Shaders\LightShadow_2_0_noShadows.fx" />
+    <None Include="Shaders\LightShadow_3_0.fx" />
+    <None Include="Shaders\LightShadow_3_0_noShadows.fx" />
+    <None Include="Shaders\sky_2_0.fx" />
+    <None Include="Shaders\sky_3_0.fx" />
+    <None Include="Shaders\wireFrame_2_0.fx" />
+    <None Include="Shaders\wireFrame_3_0.fx" />
+    <None Include="Shaders\wireFrameCol_2_0.fx" />
+    <None Include="Shaders\wireFrameCol_3_0.fx" />
+    <None Include="COMPILE_NOTES.txt" />
+    <None Include="TO_BE_DONE.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
