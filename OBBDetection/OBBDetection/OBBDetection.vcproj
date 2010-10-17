@@ -98,10 +98,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
 			ConfigurationType="1"
-			CharacterSet="2"
+			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -122,9 +122,16 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="2"
-				EnableIntrinsicFunctions="true"
-				RuntimeLibrary="2"
-				EnableFunctionLevelLinking="true"
+				EnableIntrinsicFunctions="false"
+				AdditionalIncludeDirectories="..\cgal_lib_include\auxiliary\taucs\include;..\cgal_lib_include\include;..\cgal_lib_include\auxiliary\gmp\include;..\boost_lib_include\include"
+				PreprocessorDefinitions="WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;DCGAL_CH_NO_POSTCONDITIONS;_DCGAL_CH_NO_POSTCONDITIONS"
+				MinimalRebuild="true"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="false"
+				PrecompiledHeaderFile=""
+				AssemblerListingLocation=".\Release\"
+				ObjectFile=".\Release\"
+				ProgramDataBaseFileName=".\Release\"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -139,9 +146,15 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="mpfr-vc90-mt-gd.lib gmp-vc90-mt-gd.lib odbc32.lib odbccp32.lib d3d9.lib d3dx9.lib comctl32.lib dinput8.lib dxguid.lib"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="..\cgal_lib_include\auxiliary\taucs\lib;..\cgal_lib_include\auxiliary\gmp\lib;..\cgal_lib_include\lib;..\boost_lib_include\lib"
 				GenerateDebugInformation="true"
+				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
