@@ -293,8 +293,7 @@ void physics::InitAABBs(void)
 	// Initialize axis lists as just the RBOBJECTS (arbitrary order)
 	for(int i = 0; i < (NO_RBOBJECTS); i++)
 	{
-		AABBX
-			axis[i] = i;  AABBYaxis[i] = i;  AABBZaxis[i] = i;
+		AABBXaxis[i] = i;  AABBYaxis[i] = i;  AABBZaxis[i] = i;
 	}
 
 	// Perform a first time sort and sweep --> Expected slow due to insertion sort on unsorted list.

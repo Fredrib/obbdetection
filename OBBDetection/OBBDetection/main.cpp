@@ -84,6 +84,9 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 			g_keyboard->InitKeyboard();
 			g_mouse->InitMouse();
 
+			// Start with the physics paused
+			g_app->m_pausePhysics = true;
+
 			// VALUES TO HOLD THE GAME TIME
 			g_app->m_currentTime = g_app->getTime();
 

@@ -471,6 +471,7 @@ void app::LoadSettings(void)
 	case 960: SendMessageA(m_hCbResolution,CB_SETCURSEL,4,0); break;
 	case 1024: SendMessageA(m_hCbResolution,CB_SETCURSEL,5,0); break;
 	case 1200: SendMessageA(m_hCbResolution,CB_SETCURSEL,6,0); break;
+	case 720: SendMessageA(m_hCbResolution,CB_SETCURSEL,7,0); break;
 	default: SendMessageA(m_hCbResolution,CB_SETCURSEL,1,0); break;
 	}
 
@@ -565,6 +566,7 @@ void app::SaveSettings(void)
 	case 4: m_dwWidth = 1280; m_dwHeight = 960; break;
 	case 5: m_dwWidth = 1280; m_dwHeight = 1024; break;
 	case 6: m_dwWidth = 1600; m_dwHeight = 1200; break;
+	case 7: m_dwWidth = 1280; m_dwHeight = 720; break;
 	}
 
 	switch(SendMessageA(m_hCbBackBuffer,CB_GETCURSEL,0,0))
@@ -779,6 +781,7 @@ void app::AddButtons(void)
 	SendMessageA(m_hCbResolution,CB_ADDSTRING,0,(long)"1280 x 960");
 	SendMessageA(m_hCbResolution,CB_ADDSTRING,0,(long)"1280 x 1024");
 	SendMessageA(m_hCbResolution,CB_ADDSTRING,0,(long)"1600 x 1200");
+	SendMessageA(m_hCbResolution,CB_ADDSTRING,0,(long)"1280 x 720 -> 720p");
 
 	SendMessageA(m_hCbBackBuffer,CB_ADDSTRING,0,(long)"D3DFMT_R5G6B5");
 	SendMessageA(m_hCbBackBuffer,CB_ADDSTRING,0,(long)"D3DFMT_A1R5G5B5");

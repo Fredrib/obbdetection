@@ -103,7 +103,7 @@ using namespace std;
 #define EPSILON							0.00000001 // A small value (with some margin)
 
 //constants - UI
-#define CAMERA_SPEED					0.1f
+#define CAMERA_SPEED					0.025f
 #define CAMERA_SPEED_FAST_MULTIPLIER	5.0f
 
 //constants -Renderer
@@ -113,7 +113,7 @@ using namespace std;
 //constants - Physics
 #define STATESIZE							13		// size of a rbobject (x, quat, P and L) in array form
 const D3DXVECTOR3 GRAVITY					= D3DXVECTOR3(0.0f, -9.8f, 0.0f);
-#define PHYSICS_STEP						0.05f // DEFAULT = 0.05F (20Hz)
+#define PHYSICS_STEP						0.008333333333f // DEFAULT = 1/120 (120Hz)
 #define MAX_RENDER_FRAME_SKIP				10 // If physics gets behind, still render some frames: DEFAULT = 4 
 #define	PAUSE_PHYSICS						1
 #define ADD_VECTOR_PRETURB					0
